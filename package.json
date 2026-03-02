@@ -5,11 +5,14 @@
   "main": "index.js",
   "scripts": {
     "live": "live-server src --verbose",
-    "dev": "npm run live"
+    "dev": "npm run live",
+    "sass": "sass src/scss/style.scss src/css/index.css",
+    "sass:watch": "sass --watch src/scss/style.scss src/css/index.css"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "live-server": "^1.2.2"
+    "live-server": "^1.2.2",
+    "sass": "^1.97.3"
   }
 }
