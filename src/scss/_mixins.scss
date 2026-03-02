@@ -1,0 +1,32 @@
+@use 'variables' as *;
+
+@mixin card {
+  background: $color-white;
+  border-radius: $border-radius;
+  padding: $spacing-lg;
+  margin-bottom: $spacing-lg;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin responsive($breakpoint: $breakpoint-sm) {
+  @media (min-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin placeholder-image($height: 12rem) {
+  background-color: $color-placeholder;
+  height: $height;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $color-text-light;
+  font-size: $text-size-sm;
+  border-radius: $border-radius;
+}

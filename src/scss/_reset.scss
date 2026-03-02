@@ -1,3 +1,5 @@
+@use 'variables' as *;
+
 *,
 *::before,
 *::after {
@@ -7,14 +9,14 @@
 }
 
 html {
-  font-size: 1rem;
+  font-size: $text-size-base;
   scroll-behavior: smooth;
 }
 
 body {
-  font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  color: #333333;
-  background-color: #f9f9f9;
+  font-family: $font-family-base;
+  color: $color-text;
+  background-color: $color-background;
   line-height: 1.6;
 }
 
@@ -33,5 +35,3 @@ img {
   height: auto;
   display: block;
 }
-
-/*# sourceMappingURL=index.css.map */

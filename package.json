@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "live": "live-server src --verbose",
-    "dev": "npm run live",
+    "dev": "npm run live & npm run sass:watch",
     "sass": "sass src/scss/style.scss src/css/index.css",
     "sass:watch": "sass --watch src/scss/style.scss src/css/index.css"
   },
