@@ -1,4 +1,12 @@
 @use 'variables' as *;
-@use 'mixins' as *;
 @use 'reset';
-@use 'sass:color';
+@use 'sections/top';
+@use 'sections/about';
+
+.container {
+  height: 100svh;
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: $color-bg;
+}
