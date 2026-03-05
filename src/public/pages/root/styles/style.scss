@@ -1,5 +1,10 @@
-@use '../variables' as *;
-@use '../mixins' as *;
+// Import Base styles
+@use '../../../../scss/reset';
+@use '../../../../scss/common';
+
+// Import variables and mixins
+@use '../../../../scss/variables' as *;
+@use '../../../../scss/mixins' as *;
 
 .top {
   height: 100%;

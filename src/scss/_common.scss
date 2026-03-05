@@ -1,0 +1,34 @@
+@use 'variables' as *;
+
+body {
+  font-family: $font-family-base;
+  color: $color-text;
+  background-color: $color-background;
+  line-height: $line-height-base;
+  letter-spacing: $letter-spacing-base;
+}
+
+.container {
+  height: 100svh;
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: $color-bg;
+}
+
+.section-wrapper {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  color: $color-white;
+  padding: $spacing-lg $spacing-md;
+
+  @media (min-width: $breakpoint-md) {
+    padding: $spacing-xl $spacing-lg;
+  }
+
+  @media (min-width: $breakpoint-lg) {
+    padding: $spacing-2xl $spacing-xl;
+  }
+}

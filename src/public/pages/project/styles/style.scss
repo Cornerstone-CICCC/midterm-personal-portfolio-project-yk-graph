@@ -1,0 +1,72 @@
+// Import Base styles
+@use '../../../../scss/reset';
+@use '../../../../scss/common';
+
+// Import variables and mixins
+@use '../../../../scss/variables' as *;
+@use '../../../../scss/mixins' as *;
+
+// PROJECT section
+.project {
+  height: 100%;
+  width: 100%;
+  background: $color-bg;
+
+  &__heading {
+    font-size: $text-size-h1;
+    margin-bottom: $spacing-xl;
+    text-align: center;
+  }
+
+  &__body {
+    display: grid;
+    gap: $spacing-xl;
+  }
+
+  &__item {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: $border-radius;
+    overflow: hidden;
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: translateY(-0.5rem);
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 12rem;
+    object-fit: cover;
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  &__content {
+    padding: $spacing-lg;
+  }
+
+  &__title {
+    font-size: $text-size-h3;
+    margin-bottom: $spacing-md;
+  }
+
+  &__description {
+    color: $color-text-light;
+    margin-bottom: $spacing-md;
+    line-height: $line-height-wide;
+  }
+
+  &__tags {
+    display: flex;
+    gap: $spacing-sm;
+    flex-wrap: wrap;
+
+    .tag {
+      background: $color-accent;
+      color: $color-white;
+      padding: $spacing-xs $spacing-sm;
+      border-radius: $spacing-xs;
+      font-size: $text-size-sm;
+    }
+  }
+}

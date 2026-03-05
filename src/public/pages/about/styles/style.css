@@ -1,0 +1,111 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 1rem;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Lora", serif;
+  color: #333333;
+  background-color: #f9f9f9;
+}
+
+ul,
+ol {
+  list-style-position: inside;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+body {
+  font-family: "Lora", serif;
+  color: #333333;
+  background-color: #f9f9f9;
+  line-height: 1.6;
+  letter-spacing: 0.025em;
+}
+
+.container {
+  height: 100svh;
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: #010e10;
+}
+
+.section-wrapper {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  color: #ffffff;
+  padding: 1.5rem 1rem;
+}
+@media (min-width: 48rem) {
+  .section-wrapper {
+    padding: 2rem 1.5rem;
+  }
+}
+@media (min-width: 64rem) {
+  .section-wrapper {
+    padding: 2.5rem 2rem;
+  }
+}
+
+.about {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.about__bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 1;
+}
+.about__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.75);
+  transition: background 0.1s ease-out;
+}
+.about__heading {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+.about__body {
+  line-height: 1.8;
+}
+.about__body p {
+  margin-bottom: 1rem;
+}
+
+/*# sourceMappingURL=style.css.map */

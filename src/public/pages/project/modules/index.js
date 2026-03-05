@@ -1,7 +1,5 @@
-import { initSpotlight } from './modules/spotlight.js';
-
 const init = () => {
-  initSpotlight();
+  console.log('Project page loaded');
 };
 
 if (document.readyState === 'loading') {

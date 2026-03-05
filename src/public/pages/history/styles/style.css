@@ -1,0 +1,114 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 1rem;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Lora", serif;
+  color: #333333;
+  background-color: #f9f9f9;
+}
+
+ul,
+ol {
+  list-style-position: inside;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+body {
+  font-family: "Lora", serif;
+  color: #333333;
+  background-color: #f9f9f9;
+  line-height: 1.6;
+  letter-spacing: 0.025em;
+}
+
+.container {
+  height: 100svh;
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: #010e10;
+}
+
+.section-wrapper {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  color: #ffffff;
+  padding: 1.5rem 1rem;
+}
+@media (min-width: 48rem) {
+  .section-wrapper {
+    padding: 2rem 1.5rem;
+  }
+}
+@media (min-width: 64rem) {
+  .section-wrapper {
+    padding: 2.5rem 2rem;
+  }
+}
+
+.history {
+  height: 100%;
+  width: 100%;
+  background: #010e10;
+}
+.history__heading {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+.history__body {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.history__item {
+  display: grid;
+  gap: 1rem;
+  padding: 1.5rem;
+  border-left: 3px solid rgb(231, 76, 60);
+  background: rgba(255, 255, 255, 0.03);
+}
+@media (min-width: 48rem) {
+  .history__item {
+    grid-template-columns: 12rem 1fr;
+  }
+}
+.history__period {
+  color: rgb(231, 76, 60);
+  font-weight: bold;
+}
+.history__title {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+.history__company {
+  color: #777777;
+  margin-bottom: 0.5rem;
+}
+.history__description {
+  line-height: 1.8;
+}
+
+/*# sourceMappingURL=style.css.map */

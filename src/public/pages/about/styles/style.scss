@@ -1,0 +1,51 @@
+// Import Base styles
+@use '../../../../scss/reset';
+@use '../../../../scss/common';
+
+// Import variables and mixins
+@use '../../../../scss/variables' as *;
+@use '../../../../scss/mixins' as *;
+
+// ABOUT section
+.about {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  @include flex-center;
+
+  &__bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 1;
+  }
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.75);
+    transition: background 0.1s ease-out;
+  }
+
+  &__heading {
+    font-size: $text-size-h1;
+    margin-bottom: $spacing-lg;
+  }
+
+  &__body {
+    line-height: $line-height-wide;
+
+    p {
+      margin-bottom: $spacing-md;
+    }
+  }
+}
