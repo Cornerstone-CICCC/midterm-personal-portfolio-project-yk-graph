@@ -8,10 +8,10 @@ $color-text-light: #777777;
 $color-border: #dddddd;
 $color-footer-bg: $color-primary;
 $color-footer-text: $color-white;
-$color-hero-bg: rgb(44, 62, 80);
+$color-bg: #010e10;
 $color-placeholder: #cccccc;
 
-$font-family-base: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+$font-family-base: 'Lora', serif;
 
 $text-size-xs: 0.75rem; // 12px
 $text-size-sm: 0.875rem; // 14px
@@ -38,7 +38,7 @@ $border-radius: 0.5rem; // 8px
 $profile-image-size: 15rem; // 240px
 
 $breakpoint-xs: 30rem; // 480px
-$breakpoint-sm: 37.5rem; // 600px
+$breakpoint-sm: 40rem; // 640px
 $breakpoint-md: 48rem; // 768px
 $breakpoint-lg: 64rem; // 1024px
 $breakpoint-xl: 80rem; // 1280px

@@ -14,7 +14,7 @@
   align-items: center;
 }
 
-@mixin responsive($breakpoint: $breakpoint-sm) {
+@mixin responsive($breakpoint: $breakpoint-md) {
   @media (min-width: $breakpoint) {
     @content;
   }
