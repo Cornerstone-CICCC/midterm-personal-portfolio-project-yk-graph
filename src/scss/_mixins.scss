@@ -30,3 +30,52 @@
   font-size: $text-size-sm;
   border-radius: $border-radius;
 }
+
+@mixin heading1 {
+  font-size: $text-size-2xl;
+  line-height: $line-height-base;
+  letter-spacing: $letter-spacing-wide;
+  margin-bottom: $spacing-md;
+
+  @include responsive($breakpoint-md) {
+    font-size: $text-size-3xl;
+  }
+}
+
+@mixin heading2 {
+  font-size: $text-size-xl;
+  line-height: $line-height-base;
+  letter-spacing: $letter-spacing-base;
+  margin-bottom: $spacing-md;
+
+  @include responsive($breakpoint-md) {
+    font-size: $text-size-2xl;
+  }
+}
+
+@mixin heading3 {
+  font-size: $text-size-lg;
+  line-height: $line-height-base;
+  letter-spacing: $letter-spacing-base;
+  margin-bottom: $spacing-sm;
+
+  @include responsive($breakpoint-md) {
+    font-size: $text-size-xl;
+  }
+}
+
+@mixin bg-color($color, $opacity) {
+  background: rgba($color, $opacity);
+}
+
+@mixin border-color($width, $style, $color, $opacity) {
+  border: $width $style rgba($color, $opacity);
+}
+
+@mixin text-color($color, $opacity) {
+  color: rgba($color, $opacity);
+}
+
+@mixin border-bottom-color($width, $style, $color, $opacity) {
+  border-bottom: $width $style rgba($color, $opacity);
+}

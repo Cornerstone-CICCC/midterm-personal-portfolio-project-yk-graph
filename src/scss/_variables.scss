@@ -1,8 +1,20 @@
+// Font Variables
+$font-family-base: 'Lora', serif;
+
+// Breakpoint Variables
+$breakpoint-xs: 30rem; // 480px
+$breakpoint-sm: 40rem; // 640px
+$breakpoint-md: 48rem; // 768px
+$breakpoint-lg: 64rem; // 1024px
+$breakpoint-xl: 80rem; // 1280px
+
+// Color Variables
 $color-primary: #2c3e50;
 $color-secondary: #e74c3c;
 $color-accent: rgb(231, 76, 60);
 $color-background: #f9f9f9;
 $color-white: #ffffff;
+$color-black: #000000;
 $color-text: #333333;
 $color-text-light: #777777;
 $color-border: #dddddd;
@@ -11,28 +23,33 @@ $color-footer-text: $color-white;
 $color-bg: #010e10;
 $color-placeholder: #cccccc;
 
-$font-family-base: 'Lora', serif;
+// Terminal Colors
+$color-terminal-red: #ff5f56;
+$color-terminal-yellow: #ffbd2e;
+$color-terminal-green: #27c93f;
 
-$line-height-tight: 1.4;
-$line-height-base: 1.6;
-$line-height-wide: 1.8;
-$line-height-relaxed: 2;
-
-$letter-spacing-tight: 0.01em;
-$letter-spacing-base: 0.025em;
-$letter-spacing-wide: 0.05em;
-$letter-spacing-relaxed: 0.1em;
-
+// Typography Variables
 $text-size-xs: 0.75rem; // 12px
 $text-size-sm: 0.875rem; // 14px
 $text-size-base: 1rem; // 16px
 $text-size-lg: 1.125rem; // 18px
 $text-size-xl: 1.25rem; // 20px
+$text-size-2xl: 1.5rem; // 24px
+$text-size-3xl: 2rem; // 32px
 
-$text-size-h1: 2rem; // 32px
-$text-size-h2: 1.5rem; // 24px
-$text-size-h3: 1.25rem; // 20px
+// Line Height variables
+$line-height-tight: 1.4;
+$line-height-base: 1.6;
+$line-height-wide: 1.8;
+$line-height-relaxed: 2;
 
+// Letter Spacing variables
+$letter-spacing-tight: 0.01em;
+$letter-spacing-base: 0.025em;
+$letter-spacing-wide: 0.05em;
+$letter-spacing-relaxed: 0.1em;
+
+// Spacing Variables
 $spacing-xs: 0.25rem; // 4px
 $spacing-sm: 0.5rem; // 8px
 $spacing-md: 1rem; // 16px
@@ -41,14 +58,8 @@ $spacing-xl: 2rem; // 32px
 $spacing-2xl: 2.5rem; // 40px
 $spacing-3xl: 3rem; // 48px
 
+// Other Variables
 $max-width: 50rem; // 800px
 $max-width-xl: 80rem; // 1280px
 $border-radius: 0.5rem; // 8px
-
 $profile-image-size: 15rem; // 240px
-
-$breakpoint-xs: 30rem; // 480px
-$breakpoint-sm: 40rem; // 640px
-$breakpoint-md: 48rem; // 768px
-$breakpoint-lg: 64rem; // 1024px
-$breakpoint-xl: 80rem; // 1280px
