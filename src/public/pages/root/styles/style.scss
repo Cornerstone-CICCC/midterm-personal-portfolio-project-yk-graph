@@ -27,20 +27,14 @@
     color: $color-white;
     text-align: center;
     opacity: 0.75;
-  }
 
-  &__welcome-text {
-    display: block;
-
-    &--mobile {
-      display: block;
-
+    .mobile {
       @media (min-width: $breakpoint-md) {
         display: none;
       }
     }
 
-    &--desktop {
+    .desktop {
       display: none;
 
       @media (min-width: $breakpoint-md) {
@@ -52,7 +46,8 @@
   &__carousel {
     display: block;
     width: 100%;
-    position: relative;
+    overflow: visible;
+    padding: $spacing-2xl 0;
 
     @media (min-width: $breakpoint-md) {
       display: none;
@@ -69,81 +64,59 @@
   }
 
   &__gear-container {
-    display: none;
-
-    @media (min-width: $breakpoint-md) {
-      display: block;
-      width: 50vw;
-      min-width: 30rem;
-      height: auto;
-      overflow: visible;
-      position: absolute;
-      z-index: 1;
-      transform: translateY(-50%) rotate(90deg);
-      top: 75%;
-      right: -10%;
-    }
+    display: block;
+    width: 50vw;
+    min-width: 30rem;
+    height: auto;
+    overflow: visible;
+    position: absolute;
+    z-index: 1;
+    transform: translateY(-50%) rotate(90deg);
+    top: 75%;
+    right: -10%;
   }
 }
 
 .carousel {
-  &__container {
+  &__track {
     display: flex;
-    justify-content: center;
-    gap: $spacing-md;
-    padding: 0 $spacing-xl;
+    gap: $spacing-lg;
+    overflow-x: auto;
+    overflow-y: visible;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding: $spacing-md calc(50vw - 5.5rem);
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 
-  &__btn {
-    padding: $spacing-md $spacing-xl;
+  &__card {
+    flex-shrink: 0;
+    width: 9rem;
+    padding: $spacing-lg $spacing-md;
     background: rgba(255, 255, 255, 0.1);
-    border: 2px solid $color-accent;
+    border: 2px solid rgba(255, 255, 255, 0.3);
     border-radius: $border-radius;
     color: $color-white;
     font-family: $font-family-base;
     font-size: $text-size-base;
-    cursor: pointer;
-    transition: all 0.3s;
-    min-width: 8rem;
+    text-align: center;
+    text-decoration: none;
+    scroll-snap-align: center;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: scale(0.8);
+    opacity: 0.5;
 
-    &:hover {
-      background: rgba(255, 255, 255, 0.2);
-      transform: translateY(-2px);
-    }
-
-    &--active {
-      background: $color-accent;
+    &--center {
+      transform: scale(1.1);
+      opacity: 1;
       border-color: $color-accent;
-    }
-  }
-
-  &__nav {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 2.5rem;
-    height: 2.5rem;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid $color-accent;
-    border-radius: 50%;
-    color: $color-white;
-    font-size: $text-size-h3;
-    cursor: pointer;
-    transition: all 0.3s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    &:hover {
-      background: $color-accent;
-    }
-
-    &--prev {
-      left: 0;
-    }
-
-    &--next {
-      right: 0;
+      box-shadow: 0 0 30px rgba($color-accent, 0.6);
+      background: rgba(255, 255, 255, 0.15);
     }
   }
 }

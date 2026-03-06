@@ -1,61 +1,34 @@
 export const initCarousel = () => {
-  const buttons = document.querySelectorAll('.carousel__btn');
-  const prevBtn = document.querySelector('.carousel__nav--prev');
-  const nextBtn = document.querySelector('.carousel__nav--next');
+  const track = document.getElementById('carouselTrack');
+  if (!track) return;
 
-  if (!buttons.length || !prevBtn || !nextBtn) return;
+  const cards = track.querySelectorAll('.carousel__card');
 
-  let currentIndex = 0;
+  const updateCenterCard = () => {
+    const trackRect = track.getBoundingClientRect();
+    const centerX = trackRect.left + trackRect.width / 2;
 
-  const updateActiveButton = (index) => {
-    buttons.forEach((btn, i) => {
-      btn.classList.toggle('carousel__btn--active', i === index);
+    let closestCard = null;
+    let closestDistance = Infinity;
+
+    cards.forEach(card => {
+      const cardRect = card.getBoundingClientRect();
+      const cardCenterX = cardRect.left + cardRect.width / 2;
+      const distance = Math.abs(centerX - cardCenterX);
+
+      if (distance < closestDistance) {
+        closestDistance = distance;
+        closestCard = card;
+      }
+
+      card.classList.remove('carousel__card--center');
     });
-  };
 
-  const navigateToPage = (page) => {
-    window.location.href = `/${page}/`;
-  };
-
-  prevBtn.addEventListener('click', () => {
-    currentIndex = (currentIndex - 1 + buttons.length) % buttons.length;
-    updateActiveButton(currentIndex);
-  });
-
-  nextBtn.addEventListener('click', () => {
-    currentIndex = (currentIndex + 1) % buttons.length;
-    updateActiveButton(currentIndex);
-  });
-
-  buttons.forEach((btn, index) => {
-    btn.addEventListener('click', () => {
-      const page = btn.dataset.page;
-      navigateToPage(page);
-    });
-  });
-
-  let touchStartX = 0;
-  let touchEndX = 0;
-
-  const carousel = document.querySelector('.top__carousel');
-
-  carousel.addEventListener('touchstart', (e) => {
-    touchStartX = e.changedTouches[0].screenX;
-  });
-
-  carousel.addEventListener('touchend', (e) => {
-    touchEndX = e.changedTouches[0].screenX;
-    handleSwipe();
-  });
-
-  const handleSwipe = () => {
-    if (touchEndX < touchStartX - 50) {
-      currentIndex = (currentIndex + 1) % buttons.length;
-      updateActiveButton(currentIndex);
-    }
-    if (touchEndX > touchStartX + 50) {
-      currentIndex = (currentIndex - 1 + buttons.length) % buttons.length;
-      updateActiveButton(currentIndex);
+    if (closestCard) {
+      closestCard.classList.add('carousel__card--center');
     }
   };
+
+  track.addEventListener('scroll', updateCenterCard);
+  updateCenterCard();
 };

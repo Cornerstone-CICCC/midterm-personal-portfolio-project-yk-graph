@@ -16,21 +16,19 @@
     <section id="top" class="top">
       <div class="top__content">
         <h1 class="top__welcome">
-          <span class="top__welcome-text top__welcome-text--mobile">Welcome to my page! Please select menu!</span>
-          <span class="top__welcome-text top__welcome-text--desktop">Welcome to my page!<br />Please enter a command!</span>
+          <span class="mobile">Welcome to my page!<br />Please select menu!</span>
+          <span class="desktop">Welcome to my page!<br />Please enter a command!</span>
         </h1>
 
         <!-- mobile carousel -->
         <div class="top__carousel">
-          <div class="carousel__container">
-            <button class="carousel__btn carousel__btn--active" data-page="about">About</button>
-            <button class="carousel__btn" data-page="skill">Skill</button>
-            <button class="carousel__btn" data-page="project">Project</button>
-            <button class="carousel__btn" data-page="history">History</button>
-            <button class="carousel__btn" data-page="contact">Contact</button>
+          <div class="carousel__track" id="carouselTrack">
+            <a href="/about/" class="carousel__card">About</a>
+            <a href="/skill/" class="carousel__card">Skill</a>
+            <a href="/project/" class="carousel__card">Project</a>
+            <a href="/history/" class="carousel__card">History</a>
+            <a href="/contact/" class="carousel__card">Contact</a>
           </div>
-          <button class="carousel__nav carousel__nav--prev" aria-label="Previous">&lt;</button>
-          <button class="carousel__nav carousel__nav--next" aria-label="Next">&gt;</button>
         </div>
 
         <!-- desktop terminal -->
