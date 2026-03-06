@@ -1,0 +1,11 @@
+# Netlify configuration file
+
+[build]
+  command = "npm run sass"
+  publish = "src/public/pages"
+
+[[redirects]]
+  from = "/"
+  to = "/root/index.html"
+  status = 200
+  force = true
