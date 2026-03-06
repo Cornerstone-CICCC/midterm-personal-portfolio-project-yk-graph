@@ -116,72 +116,65 @@ body {
 .project {
   height: 100%;
   width: 100%;
-  background: #010e10;
-}
-.project__heading {
-  font-size: 1.25rem;
-  line-height: 1.6;
-  letter-spacing: 0.025em;
-  margin-bottom: 1rem;
-}
-@media (min-width: 48rem) {
-  .project__heading {
-    font-size: 1.5rem;
-  }
-}
-.project__heading {
-  margin-bottom: 2rem;
-  text-align: center;
-}
-.project__body {
-  display: grid;
-  gap: 2rem;
-}
-.project__item {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 0.5rem;
+  position: relative;
   overflow: hidden;
-  transition: transform 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.project__item:hover {
-  transform: translateY(-0.5rem);
-}
-.project__image {
+.project__bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 12rem;
+  height: 100%;
   object-fit: cover;
-  background: rgba(255, 255, 255, 0.1);
+  object-position: center;
+  z-index: 1;
+  animation: slideUp 2s ease-out forwards;
 }
-.project__content {
-  padding: 1.5rem;
+.project__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.75);
+  transition: background 0.1s ease-out;
 }
-.project__title {
-  font-size: 1.125rem;
-  line-height: 1.6;
-  letter-spacing: 0.025em;
-  margin-bottom: 0.5rem;
+.project__coming-soon {
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-align: center;
+  color: #ffffff;
+  opacity: 0;
+  animation: fadeInUp 1s ease-out 0.5s forwards;
 }
 @media (min-width: 48rem) {
-  .project__title {
-    font-size: 1.25rem;
+  .project__coming-soon {
+    font-size: 4rem;
   }
 }
-.project__description {
-  color: #777777;
-  margin-bottom: 1rem;
-  line-height: 1.8;
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+  }
+  to {
+    transform: translateY(0);
+  }
 }
-.project__tags {
-  display: flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-}
-.project__tags .tag {
-  background: rgb(231, 76, 60);
-  color: #ffffff;
-  padding: 0.25rem 0.5rem;
-  border-radius: 0.25rem;
-  font-size: 0.875rem;
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

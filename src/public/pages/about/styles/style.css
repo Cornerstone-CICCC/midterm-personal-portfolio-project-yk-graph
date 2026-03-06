@@ -122,6 +122,17 @@ body {
   justify-content: center;
   align-items: center;
 }
+.about .section-wrapper {
+  justify-content: flex-start;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+@media (min-width: 48rem) {
+  .about .section-wrapper {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+}
 .about__bg-image {
   position: absolute;
   top: 0;
@@ -157,9 +168,30 @@ body {
 .about__heading {
   opacity: 0;
   animation: fadeInUp 1s ease-out 0.5s forwards;
+  flex-shrink: 0;
 }
 .about__body {
   line-height: 1.8;
+  overflow-y: auto;
+  flex: 1;
+  padding-right: 0.5rem;
+  padding-bottom: 1rem;
+}
+.about__body::-webkit-scrollbar {
+  width: 0.5rem;
+}
+.about__body::-webkit-scrollbar-track {
+  background: transparent;
+}
+.about__body::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 0.5rem;
+}
+.about__body:hover::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+}
+.about__body:hover::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
 }
 .about__body p {
   margin-bottom: 1rem;

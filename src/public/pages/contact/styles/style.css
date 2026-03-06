@@ -116,31 +116,95 @@ body {
 .contact {
   height: 100%;
   width: 100%;
-  background: #010e10;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contact .section-wrapper {
+  justify-content: flex-start;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+@media (min-width: 48rem) {
+  .contact .section-wrapper {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+}
+.contact__bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 1;
+  animation: slideUp 2s ease-out forwards;
+}
+.contact__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.75);
+  transition: background 0.1s ease-out;
 }
 .contact__heading {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   line-height: 1.6;
-  letter-spacing: 0.025em;
+  letter-spacing: 0.05em;
   margin-bottom: 1rem;
 }
 @media (min-width: 48rem) {
   .contact__heading {
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
 }
 .contact__heading {
-  margin-bottom: 2rem;
-  text-align: center;
+  opacity: 0;
+  animation: fadeInUp 1s ease-out 0.5s forwards;
+  flex-shrink: 0;
 }
 .contact__body {
   max-width: 40rem;
   margin: 0 auto;
+  overflow-y: auto;
+  flex: 1;
+  padding-right: 0.5rem;
+  padding-bottom: 1rem;
+  width: 100%;
+}
+.contact__body::-webkit-scrollbar {
+  width: 0.5rem;
+}
+.contact__body::-webkit-scrollbar-track {
+  background: transparent;
+}
+.contact__body::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 0.5rem;
+}
+.contact__body:hover::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+}
+.contact__body:hover::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
 }
 .contact__intro {
   text-align: center;
   margin-bottom: 2rem;
   line-height: 1.8;
+  opacity: 0;
+  animation: fadeInUp 1s ease-out 0.8s forwards;
+}
+.contact__form {
+  opacity: 0;
+  animation: fadeInUp 1s ease-out 1.1s forwards;
 }
 .contact__form .form-group {
   margin-bottom: 1.5rem;
@@ -190,6 +254,8 @@ body {
   gap: 1rem;
   margin-top: 2rem;
   align-items: center;
+  opacity: 0;
+  animation: fadeInUp 1s ease-out 1.4s forwards;
 }
 .contact__link {
   color: rgb(231, 76, 60);
@@ -199,6 +265,25 @@ body {
 .contact__link:hover {
   color: rgb(236.5890410959, 117.6849315068, 105.4109589041);
   text-decoration: underline;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

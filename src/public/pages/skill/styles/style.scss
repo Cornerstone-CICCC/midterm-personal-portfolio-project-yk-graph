@@ -10,17 +10,82 @@
 .skill {
   height: 100%;
   width: 100%;
-  background: $color-bg;
+  position: relative;
+  overflow: hidden;
+  @include flex-center;
+
+  .section-wrapper {
+    justify-content: flex-start;
+    padding-top: $spacing-xl;
+    padding-bottom: $spacing-xl;
+
+    @media (min-width: $breakpoint-md) {
+      padding-top: $spacing-2xl;
+      padding-bottom: $spacing-2xl;
+    }
+  }
+
+  &__bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 1;
+    animation: slideUp 2s ease-out forwards;
+  }
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    @include bg-color($color-black, 0.75);
+    transition: background 0.1s ease-out;
+  }
 
   &__heading {
-    @include heading2;
-    margin-bottom: $spacing-xl;
-    text-align: center;
+    @include heading1;
+    opacity: 0;
+    animation: fadeInUp 1s ease-out 0.5s forwards;
+    flex-shrink: 0;
   }
 
   &__body {
     display: grid;
     gap: $spacing-xl;
+    overflow-y: auto;
+    flex: 1;
+    padding-right: $spacing-sm;
+    padding-bottom: $spacing-md;
+    align-content: flex-start;
+
+    &::-webkit-scrollbar {
+      width: 0.5rem;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: transparent;
+      border-radius: $border-radius;
+    }
+
+    &:hover {
+      &::-webkit-scrollbar-thumb {
+        @include bg-color($color-white, 0.2);
+
+        &:hover {
+          @include bg-color($color-white, 0.3);
+        }
+      }
+    }
 
     @media (min-width: $breakpoint-md) {
       grid-template-columns: repeat(3, 1fr);
@@ -28,6 +93,21 @@
   }
 
   &__category {
+    opacity: 0;
+    animation: fadeInUp 1s ease-out forwards;
+
+    &:nth-child(1) {
+      animation-delay: 0.8s;
+    }
+
+    &:nth-child(2) {
+      animation-delay: 1.1s;
+    }
+
+    &:nth-child(3) {
+      animation-delay: 1.4s;
+    }
+
     h3 {
       @include heading3;
       color: $color-accent;
@@ -41,5 +121,27 @@
         @include border-bottom-color(1px, solid, $color-white, 0.1);
       }
     }
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

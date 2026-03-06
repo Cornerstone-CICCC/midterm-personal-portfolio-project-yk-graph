@@ -10,62 +10,66 @@
 .project {
   height: 100%;
   width: 100%;
-  background: $color-bg;
+  position: relative;
+  overflow: hidden;
+  @include flex-center;
 
-  &__heading {
-    @include heading2;
-    margin-bottom: $spacing-xl;
-    text-align: center;
-  }
-
-  &__body {
-    display: grid;
-    gap: $spacing-xl;
-  }
-
-  &__item {
-    @include bg-color($color-white, 0.05);
-    border-radius: $border-radius;
-    overflow: hidden;
-    transition: transform 0.3s;
-
-    &:hover {
-      transform: translateY(-0.5rem);
-    }
-  }
-
-  &__image {
+  &__bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 12rem;
+    height: 100%;
     object-fit: cover;
-    @include bg-color($color-white, 0.1);
+    object-position: center;
+    z-index: 1;
+    animation: slideUp 2s ease-out forwards;
   }
 
-  &__content {
-    padding: $spacing-lg;
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    @include bg-color($color-black, 0.75);
+    transition: background 0.1s ease-out;
   }
 
-  &__title {
-    @include heading3;
-  }
+  &__coming-soon {
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: $letter-spacing-wide;
+    text-align: center;
+    color: $color-white;
+    opacity: 0;
+    animation: fadeInUp 1s ease-out 0.5s forwards;
 
-  &__description {
-    color: $color-text-light;
-    margin-bottom: $spacing-md;
-    line-height: $line-height-wide;
-  }
-
-  &__tags {
-    display: flex;
-    gap: $spacing-sm;
-    flex-wrap: wrap;
-
-    .tag {
-      background: $color-accent;
-      color: $color-white;
-      padding: $spacing-xs $spacing-sm;
-      border-radius: $spacing-xs;
-      font-size: $text-size-sm;
+    @media (min-width: $breakpoint-md) {
+      font-size: 4rem;
     }
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

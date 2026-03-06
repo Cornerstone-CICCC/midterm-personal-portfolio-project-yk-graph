@@ -14,6 +14,17 @@
   overflow: hidden;
   @include flex-center;
 
+  .section-wrapper {
+    justify-content: flex-start;
+    padding-top: $spacing-xl;
+    padding-bottom: $spacing-xl;
+
+    @media (min-width: $breakpoint-md) {
+      padding-top: $spacing-2xl;
+      padding-bottom: $spacing-2xl;
+    }
+  }
+
   &__bg-image {
     position: absolute;
     top: 0;
@@ -41,10 +52,38 @@
     @include heading1;
     opacity: 0;
     animation: fadeInUp 1s ease-out 0.5s forwards;
+    flex-shrink: 0;
   }
 
   &__body {
     line-height: $line-height-wide;
+    overflow-y: auto;
+    flex: 1;
+    padding-right: $spacing-sm;
+    padding-bottom: $spacing-md;
+
+    &::-webkit-scrollbar {
+      width: 0.5rem;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: transparent;
+      border-radius: $border-radius;
+    }
+
+    &:hover {
+      &::-webkit-scrollbar-thumb {
+        @include bg-color($color-white, 0.2);
+
+        &:hover {
+          @include bg-color($color-white, 0.3);
+        }
+      }
+    }
 
     p {
       margin-bottom: $spacing-md;
