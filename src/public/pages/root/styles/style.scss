@@ -29,7 +29,7 @@
     opacity: 0.75;
 
     .mobile {
-      @media (min-width: $breakpoint-md) {
+      @include responsive() {
         display: none;
       }
     }
@@ -37,7 +37,7 @@
     .desktop {
       display: none;
 
-      @media (min-width: $breakpoint-md) {
+      @include responsive() {
         display: block;
       }
     }
@@ -49,7 +49,7 @@
     overflow: visible;
     padding: $spacing-2xl 0;
 
-    @media (min-width: $breakpoint-md) {
+    @include responsive() {
       display: none;
     }
   }
@@ -58,7 +58,7 @@
     display: none;
     width: 100%;
 
-    @media (min-width: $breakpoint-md) {
+    @include responsive() {
       display: block;
     }
   }

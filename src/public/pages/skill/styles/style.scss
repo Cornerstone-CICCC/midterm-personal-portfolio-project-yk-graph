@@ -19,7 +19,7 @@
     padding-top: $spacing-xl;
     padding-bottom: $spacing-xl;
 
-    @media (min-width: $breakpoint-md) {
+    @include responsive() {
       padding-top: $spacing-2xl;
       padding-bottom: $spacing-2xl;
     }
@@ -87,7 +87,7 @@
       }
     }
 
-    @media (min-width: $breakpoint-md) {
+    @include responsive() {
       grid-template-columns: repeat(3, 1fr);
     }
   }

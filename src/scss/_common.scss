@@ -30,7 +30,7 @@ body {
   color: $color-white;
   padding: $spacing-lg $spacing-md;
 
-  @media (min-width: $breakpoint-md) {
+  @include responsive() {
     padding: $spacing-xl $spacing-lg;
   }
 
@@ -65,7 +65,7 @@ body {
     transform: scale(1.1);
   }
 
-  @media (min-width: $breakpoint-md) {
+  @include responsive() {
     bottom: $spacing-lg;
     right: $spacing-lg;
   }

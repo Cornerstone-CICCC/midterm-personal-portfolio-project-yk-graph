@@ -46,7 +46,7 @@
     opacity: 0;
     animation: fadeInUp 1s ease-out 0.5s forwards;
 
-    @media (min-width: $breakpoint-md) {
+    @include responsive() {
       font-size: 4rem;
     }
   }
