@@ -15,14 +15,7 @@
   @include flex-center;
 
   .section-wrapper {
-    justify-content: flex-start;
-    padding-top: $spacing-xl;
-    padding-bottom: $spacing-xl;
-
-    @media (min-width: $breakpoint-md) {
-      padding-top: $spacing-2xl;
-      padding-bottom: $spacing-2xl;
-    }
+    justify-content: center;
   }
 
   &__bg-image {
@@ -44,128 +37,37 @@
     width: 100%;
     height: 100%;
     z-index: 2;
-    @include bg-color($color-black, 0.75);
+    background: radial-gradient(circle 200px at 50% 50%, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.75));
     transition: background 0.1s ease-out;
   }
 
-  &__heading {
-    @include heading1;
+  &__icons {
+    display: flex;
+    gap: $spacing-2xl;
+    align-items: center;
+    justify-content: center;
     opacity: 0;
     animation: fadeInUp 1s ease-out 0.5s forwards;
-    flex-shrink: 0;
-  }
 
-  &__body {
-    max-width: 40rem;
-    margin: 0 auto;
-    overflow-y: auto;
-    flex: 1;
-    padding-right: $spacing-sm;
-    padding-bottom: $spacing-md;
-    width: 100%;
-
-    &::-webkit-scrollbar {
-      width: 0.5rem;
-    }
-
-    &::-webkit-scrollbar-track {
-      background: transparent;
-    }
-
-    &::-webkit-scrollbar-thumb {
-      background: transparent;
-      border-radius: $border-radius;
-    }
-
-    &:hover {
-      &::-webkit-scrollbar-thumb {
-        @include bg-color($color-white, 0.2);
-
-        &:hover {
-          @include bg-color($color-white, 0.3);
-        }
-      }
+    @media (min-width: $breakpoint-md) {
+      gap: 4rem;
     }
   }
 
-  &__intro {
-    text-align: center;
-    margin-bottom: $spacing-xl;
-    line-height: $line-height-wide;
-    opacity: 0;
-    animation: fadeInUp 1s ease-out 0.8s forwards;
-  }
-
-  &__form {
-    opacity: 0;
-    animation: fadeInUp 1s ease-out 1.1s forwards;
-    .form-group {
-      margin-bottom: $spacing-lg;
-
-      label {
-        display: block;
-        margin-bottom: $spacing-sm;
-        color: $color-white;
-      }
-
-      input,
-      textarea {
-        width: 100%;
-        padding: $spacing-md;
-        @include bg-color($color-white, 0.1);
-        @include border-color(1px, solid, $color-white, 0.2);
-        border-radius: $border-radius;
-        color: $color-white;
-        font-family: $font-family-base;
-        font-size: $text-size-base;
-
-        &:focus {
-          outline: none;
-          border-color: $color-accent;
-        }
-      }
-
-      textarea {
-        resize: vertical;
-      }
-    }
-  }
-
-  &__submit {
-    width: 100%;
-    padding: $spacing-md $spacing-xl;
-    background: $color-accent;
+  &__icon {
     color: $color-white;
-    border: none;
-    border-radius: $border-radius;
-    font-size: $text-size-base;
-    font-family: $font-family-base;
-    cursor: pointer;
-    transition: background 0.3s;
+    font-size: 3rem;
+    transition: all 0.3s ease;
+    opacity: 0.8;
 
     &:hover {
-      background: darken($color-accent, 10%);
+      opacity: 1;
+      transform: scale(1.2);
+      color: $color-accent;
     }
-  }
 
-  &__links {
-    display: flex;
-    flex-direction: column;
-    gap: $spacing-md;
-    margin-top: $spacing-xl;
-    align-items: center;
-    opacity: 0;
-    animation: fadeInUp 1s ease-out 1.4s forwards;
-  }
-
-  &__link {
-    color: $color-accent;
-    text-decoration: none;
-    transition: color 0.3s;
-
-    &:hover {
-      color: lighten($color-accent, 10%);
-      text-decoration: underline;
+    @media (min-width: $breakpoint-md) {
+      font-size: 4rem;
     }
   }
 }
