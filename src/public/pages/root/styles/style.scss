@@ -98,8 +98,8 @@
     flex-shrink: 0;
     width: 9rem;
     padding: $spacing-lg $spacing-md;
-    background: rgba(255, 255, 255, 0.1);
-    border: 2px solid rgba(255, 255, 255, 0.3);
+    @include bg-color($color-white, 0.1);
+    @include border-color(2px, solid, $color-white, 0.3);
     border-radius: $border-radius;
     color: $color-white;
     font-family: $font-family-base;
@@ -116,14 +116,14 @@
       opacity: 1;
       border-color: $color-accent;
       box-shadow: 0 0 30px rgba($color-accent, 0.6);
-      background: rgba(255, 255, 255, 0.15);
+      @include bg-color($color-white, 0.15);
     }
   }
 }
 
 .terminal {
   &__header {
-    background: rgba(50, 50, 50, 0.9);
+    @include bg-color(rgb(50, 50, 50), 0.9);
     padding: $spacing-sm $spacing-md;
     border-radius: $border-radius $border-radius 0 0;
     display: flex;
@@ -142,15 +142,15 @@
     border-radius: 50%;
 
     &--close {
-      background: $color-terminal-btn-red;
+      background: $color-terminal-red;
     }
 
     &--minimize {
-      background: $color-terminal-btn-yellow;
+      background: $color-terminal-yellow;
     }
 
     &--maximize {
-      background: $color-terminal-btn-green;
+      background: $color-terminal-green;
     }
   }
 
@@ -161,7 +161,7 @@
   }
 
   &__body {
-    background: rgba(30, 30, 30, 0.95);
+    @include bg-color(rgb(30, 30, 30), 0.95);
     padding: $spacing-lg;
     border-radius: 0 0 $border-radius $border-radius;
     min-height: 20rem;
@@ -184,19 +184,19 @@
     }
 
     &--normal {
-      color: rgba(255, 255, 255, 0.8);
+      @include text-color($color-white, 0.8);
     }
 
     &--success {
-      color: $color-terminal-success;
+      color: $color-terminal-green;
     }
 
     &--error {
-      color: $color-terminal-error;
+      color: $color-terminal-red;
     }
 
     &--hint {
-      color: $color-terminal-hint;
+      color: $color-terminal-yellow;
       font-style: italic;
     }
   }
@@ -222,7 +222,7 @@
     outline: none;
 
     &::placeholder {
-      color: rgba(255, 255, 255, 0.4);
+      @include text-color($color-white, 0.4);
     }
   }
 }

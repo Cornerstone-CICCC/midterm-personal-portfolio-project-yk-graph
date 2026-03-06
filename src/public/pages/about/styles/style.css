@@ -50,10 +50,15 @@ body {
 }
 
 .section-wrapper {
+  position: relative;
+  z-index: 10;
   height: 100%;
   width: 100%;
+  max-width: 50rem;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   color: #ffffff;
   padding: 1.5rem 1rem;
 }
@@ -86,6 +91,7 @@ body {
   object-fit: cover;
   object-position: center;
   z-index: 1;
+  animation: slideUp 2s ease-out forwards;
 }
 .about__overlay {
   position: absolute;
@@ -98,14 +104,46 @@ body {
   transition: background 0.1s ease-out;
 }
 .about__heading {
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
+  font-size: 1.25rem;
+  line-height: 1.6;
+  letter-spacing: 0.025em;
+  margin-bottom: 1rem;
+}
+@media (min-width: 48rem) {
+  .about__heading {
+    font-size: 1.5rem;
+  }
+}
+.about__heading {
+  opacity: 0;
+  animation: fadeInUp 1s ease-out 0.5s forwards;
 }
 .about__body {
   line-height: 1.8;
+  opacity: 0;
+  animation: fadeInUp 1s ease-out 0.8s forwards;
 }
 .about__body p {
   margin-bottom: 1rem;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

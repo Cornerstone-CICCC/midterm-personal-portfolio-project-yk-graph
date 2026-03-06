@@ -13,7 +13,7 @@
   background: $color-bg;
 
   &__heading {
-    font-size: $text-size-h1;
+    @include heading2;
     margin-bottom: $spacing-xl;
     text-align: center;
   }
@@ -24,7 +24,7 @@
   }
 
   &__item {
-    background: rgba(255, 255, 255, 0.05);
+    @include bg-color($color-white, 0.05);
     border-radius: $border-radius;
     overflow: hidden;
     transition: transform 0.3s;
@@ -38,7 +38,7 @@
     width: 100%;
     height: 12rem;
     object-fit: cover;
-    background: rgba(255, 255, 255, 0.1);
+    @include bg-color($color-white, 0.1);
   }
 
   &__content {
@@ -46,8 +46,7 @@
   }
 
   &__title {
-    font-size: $text-size-h3;
-    margin-bottom: $spacing-md;
+    @include heading3;
   }
 
   &__description {

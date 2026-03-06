@@ -50,10 +50,15 @@ body {
 }
 
 .section-wrapper {
+  position: relative;
+  z-index: 10;
   height: 100%;
   width: 100%;
+  max-width: 50rem;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   color: #ffffff;
   padding: 1.5rem 1rem;
 }
@@ -74,7 +79,17 @@ body {
   background: #010e10;
 }
 .project__heading {
-  font-size: 2rem;
+  font-size: 1.25rem;
+  line-height: 1.6;
+  letter-spacing: 0.025em;
+  margin-bottom: 1rem;
+}
+@media (min-width: 48rem) {
+  .project__heading {
+    font-size: 1.5rem;
+  }
+}
+.project__heading {
   margin-bottom: 2rem;
   text-align: center;
 }
@@ -101,8 +116,15 @@ body {
   padding: 1.5rem;
 }
 .project__title {
-  font-size: 1.25rem;
-  margin-bottom: 1rem;
+  font-size: 1.125rem;
+  line-height: 1.6;
+  letter-spacing: 0.025em;
+  margin-bottom: 0.5rem;
+}
+@media (min-width: 48rem) {
+  .project__title {
+    font-size: 1.25rem;
+  }
 }
 .project__description {
   color: #777777;
