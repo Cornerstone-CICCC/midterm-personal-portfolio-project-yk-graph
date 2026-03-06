@@ -8,14 +8,52 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="/root/styles/style.css">
 </head>
 
 <body>
   <div class="container">
     <section id="top" class="top">
-      <img src="images/bg-fv.jpg" alt="Background" class="top__bg-image">
-      <div class="top__overlay" id="spotlightOverlay"></div>
+      <div class="top__content">
+        <h1 class="top__welcome">
+          <span class="top__welcome-text top__welcome-text--mobile">Welcome to my page! Please select menu!</span>
+          <span class="top__welcome-text top__welcome-text--desktop">Welcome to my page!<br />Please enter a command!</span>
+        </h1>
+
+        <!-- mobile carousel -->
+        <div class="top__carousel">
+          <div class="carousel__container">
+            <button class="carousel__btn carousel__btn--active" data-page="about">About</button>
+            <button class="carousel__btn" data-page="skill">Skill</button>
+            <button class="carousel__btn" data-page="project">Project</button>
+            <button class="carousel__btn" data-page="history">History</button>
+            <button class="carousel__btn" data-page="contact">Contact</button>
+          </div>
+          <button class="carousel__nav carousel__nav--prev" aria-label="Previous">&lt;</button>
+          <button class="carousel__nav carousel__nav--next" aria-label="Next">&gt;</button>
+        </div>
+
+        <!-- desktop terminal -->
+        <div class="top__terminal">
+          <div class="terminal__header">
+            <div class="terminal__buttons">
+              <span class="terminal__button terminal__button--close"></span>
+              <span class="terminal__button terminal__button--minimize"></span>
+              <span class="terminal__button terminal__button--maximize"></span>
+            </div>
+            <span class="terminal__title">terminal</span>
+          </div>
+          <div class="terminal__body">
+            <div class="terminal__output" id="terminalOutput"></div>
+            <div class="terminal__input-line">
+              <span class="terminal__prompt">$</span>
+              <input type="text" class="terminal__input" id="terminalInput" placeholder="Type 'help' for available commands" autocomplete="off">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gear SVG -->
       <svg class="top__gear-container" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
         <g>
           <path class="gear gear--large" d="M499.139,318.571l-37.178-5.407c-2.329-0.178-4.336-1.642-5.228-3.8l-12.054-29.086 c-0.901-2.15-0.526-4.613,1-6.379l22.243-29.88c3.533-4.141,3.301-10.314-0.554-14.168l-17.602-17.594 c-3.846-3.854-10.029-4.104-14.159-0.553l-29.889,22.233c-1.758,1.518-4.238,1.91-6.38,1.018l-29.094-12.062 c-2.151-0.883-3.622-2.926-3.81-5.228l-5.389-37.169c-0.428-5.442-4.96-9.635-10.402-9.635h-24.893 c-5.45,0-9.983,4.193-10.402,9.635l-5.407,37.169c-0.17,2.32-1.642,4.345-3.792,5.228l-29.103,12.062 c-2.151,0.892-4.613,0.5-6.388-1.018l-29.872-22.233c-4.13-3.542-10.304-3.302-14.167,0.553l-17.594,17.594 c-3.854,3.854-4.086,10.028-0.554,14.168l22.234,29.888c1.508,1.758,1.91,4.229,1.009,6.371l-12.054,29.086 c-0.874,2.159-2.908,3.622-5.219,3.81l-37.195,5.398c-5.425,0.429-9.618,4.961-9.618,10.412v24.883 c0,5.442,4.194,9.993,9.618,10.403l37.195,5.398c2.311,0.188,4.345,1.659,5.219,3.81l12.054,29.086 c0.901,2.159,0.5,4.63-1.009,6.388l-22.234,29.889c-3.533,4.14-3.301,10.295,0.554,14.168l17.594,17.594 c3.863,3.854,10.037,4.086,14.167,0.544l29.872-22.243c1.775-1.498,4.237-1.9,6.388-0.998l29.103,12.044 c2.151,0.902,3.622,2.918,3.802,5.246l5.398,37.169c0.428,5.433,4.952,9.636,10.402,9.636h24.893c5.451,0,9.974-4.203,10.402-9.636 l5.389-37.169c0.188-2.328,1.659-4.344,3.81-5.246l29.103-12.044c2.142-0.902,4.622-0.5,6.379,0.998l29.881,22.243 c4.13,3.542,10.314,3.31,14.159-0.544l17.602-17.594c3.864-3.873,4.087-10.028,0.554-14.168l-22.243-29.889 c-1.499-1.758-1.9-4.229-1-6.388l12.054-29.086c0.892-2.151,2.899-3.622,5.228-3.81l37.178-5.398 c5.434-0.41,9.627-4.961,9.627-10.403v-24.883C508.766,323.532,504.573,319,499.139,318.571z M379.093,382.328 c-10.93,10.912-25.445,16.926-40.898,16.926c-15.444,0-29.978-6.014-40.898-16.926c-10.92-10.938-16.943-25.454-16.943-40.907 c0-15.444,6.022-29.969,16.943-40.89c10.92-10.939,25.454-16.934,40.898-16.934c15.454,0,29.969,5.995,40.898,16.934 c10.92,10.92,16.934,25.446,16.934,40.89C396.027,356.874,390.014,371.39,379.093,382.328z">
@@ -27,7 +65,7 @@
     </section>
   </div>
 
-  <script type="module" src="modules/index.js"></script>
+  <script type="module" src="/root/modules/index.js"></script>
 </body>
 
 </html>

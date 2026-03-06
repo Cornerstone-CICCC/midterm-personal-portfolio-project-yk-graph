@@ -1,8 +1,5 @@
-// Import Base styles
 @use '../../../../scss/reset';
 @use '../../../../scss/common';
-
-// Import variables and mixins
 @use '../../../../scss/variables' as *;
 @use '../../../../scss/mixins' as *;
 
@@ -13,38 +10,247 @@
   overflow: hidden;
   @include flex-center;
 
-  &__bg-image {
-    position: absolute;
-    top: 0;
-    left: 0;
+  &__content {
+    position: relative;
+    z-index: 10;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    z-index: 1;
+    max-width: 50rem;
+    padding: $spacing-xl;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $spacing-md;
   }
 
-  &__overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
+  &__welcome {
+    @include heading1;
+    color: $color-white;
+    text-align: center;
+    opacity: 0.75;
+  }
+
+  &__welcome-text {
+    display: block;
+
+    &--mobile {
+      display: block;
+
+      @media (min-width: $breakpoint-md) {
+        display: none;
+      }
+    }
+
+    &--desktop {
+      display: none;
+
+      @media (min-width: $breakpoint-md) {
+        display: block;
+      }
+    }
+  }
+
+  &__carousel {
+    display: block;
     width: 100%;
-    height: 100%;
-    z-index: 2;
-    background: rgba(0, 0, 0, 0.75);
-    transition: background 0.1s ease-out;
+    position: relative;
+
+    @media (min-width: $breakpoint-md) {
+      display: none;
+    }
+  }
+
+  &__terminal {
+    display: none;
+    width: 100%;
+
+    @media (min-width: $breakpoint-md) {
+      display: block;
+    }
   }
 
   &__gear-container {
-    width: 50vw;
-    min-width: 30rem;
-    height: auto;
-    overflow: visible;
+    display: none;
+
+    @media (min-width: $breakpoint-md) {
+      display: block;
+      width: 50vw;
+      min-width: 30rem;
+      height: auto;
+      overflow: visible;
+      position: absolute;
+      z-index: 1;
+      transform: translateY(-50%) rotate(90deg);
+      top: 75%;
+      right: -10%;
+    }
+  }
+}
+
+.carousel {
+  &__container {
+    display: flex;
+    justify-content: center;
+    gap: $spacing-md;
+    padding: 0 $spacing-xl;
+  }
+
+  &__btn {
+    padding: $spacing-md $spacing-xl;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid $color-accent;
+    border-radius: $border-radius;
+    color: $color-white;
+    font-family: $font-family-base;
+    font-size: $text-size-base;
+    cursor: pointer;
+    transition: all 0.3s;
+    min-width: 8rem;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
+    }
+
+    &--active {
+      background: $color-accent;
+      border-color: $color-accent;
+    }
+  }
+
+  &__nav {
     position: absolute;
-    transform: translateY(-50%) rotate(90deg);
-    top: 75%;
-    right: -10%;
-    z-index: 3;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2.5rem;
+    height: 2.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid $color-accent;
+    border-radius: 50%;
+    color: $color-white;
+    font-size: $text-size-h3;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      background: $color-accent;
+    }
+
+    &--prev {
+      left: 0;
+    }
+
+    &--next {
+      right: 0;
+    }
+  }
+}
+
+.terminal {
+  &__header {
+    background: rgba(50, 50, 50, 0.9);
+    padding: $spacing-sm $spacing-md;
+    border-radius: $border-radius $border-radius 0 0;
+    display: flex;
+    align-items: center;
+    gap: $spacing-md;
+  }
+
+  &__buttons {
+    display: flex;
+    gap: $spacing-xs;
+  }
+
+  &__button {
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 50%;
+
+    &--close {
+      background: $color-terminal-btn-red;
+    }
+
+    &--minimize {
+      background: $color-terminal-btn-yellow;
+    }
+
+    &--maximize {
+      background: $color-terminal-btn-green;
+    }
+  }
+
+  &__title {
+    font-size: $text-size-sm;
+    color: $color-white;
+    opacity: 0.6;
+  }
+
+  &__body {
+    background: rgba(30, 30, 30, 0.95);
+    padding: $spacing-lg;
+    border-radius: 0 0 $border-radius $border-radius;
+    min-height: 20rem;
+    max-height: 30rem;
+    overflow-y: auto;
+    font-family: 'Courier New', monospace;
+  }
+
+  &__output {
+    margin-bottom: $spacing-md;
+  }
+
+  &__line {
+    margin-bottom: $spacing-xs;
+    font-size: $text-size-sm;
+    white-space: pre-wrap;
+
+    &--input {
+      color: $color-white;
+    }
+
+    &--normal {
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    &--success {
+      color: $color-terminal-success;
+    }
+
+    &--error {
+      color: $color-terminal-error;
+    }
+
+    &--hint {
+      color: $color-terminal-hint;
+      font-style: italic;
+    }
+  }
+
+  &__input-line {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+  }
+
+  &__prompt {
+    color: $color-accent;
+    font-weight: bold;
+  }
+
+  &__input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: $color-white;
+    font-family: 'Courier New', monospace;
+    font-size: $text-size-sm;
+    outline: none;
+
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.4);
+    }
   }
 }
 

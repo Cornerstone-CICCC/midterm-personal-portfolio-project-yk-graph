@@ -1,7 +1,9 @@
-import { initSpotlight } from './spotlight.js';
+import { initCarousel } from './carousel.js';
+import { initTerminal } from './terminal.js';
 
 const init = () => {
-  initSpotlight();
+  initCarousel();
+  initTerminal();
 };
 
 if (document.readyState === 'loading') {
