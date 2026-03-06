@@ -38,20 +38,30 @@
   }
 
   &__heading {
-    @include heading2;
-    text-align: center;
+    @include heading1;
     opacity: 0;
     animation: fadeInUp 1s ease-out 0.5s forwards;
   }
 
   &__body {
     line-height: $line-height-wide;
-    text-align: center;
-    opacity: 0;
-    animation: fadeInUp 1s ease-out 0.8s forwards;
 
     p {
       margin-bottom: $spacing-md;
+      opacity: 0;
+      animation: fadeInUp 1s ease-out forwards;
+
+      &:nth-child(1) {
+        animation-delay: 0.8s;
+      }
+
+      &:nth-child(2) {
+        animation-delay: 1.1s;
+      }
+
+      &:nth-child(3) {
+        animation-delay: 1.4s;
+      }
     }
   }
 }
@@ -60,6 +70,7 @@
   from {
     transform: translateY(20px);
   }
+
   to {
     transform: translateY(0);
   }
@@ -70,6 +81,7 @@
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);

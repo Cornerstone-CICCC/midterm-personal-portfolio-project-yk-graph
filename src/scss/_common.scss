@@ -1,4 +1,5 @@
 @use 'variables' as *;
+@use 'mixins' as *;
 
 body {
   font-family: $font-family-base;
@@ -35,5 +36,47 @@ body {
 
   @media (min-width: $breakpoint-lg) {
     padding: $spacing-2xl $spacing-xl;
+  }
+}
+
+.back-btn {
+  position: fixed;
+  bottom: $spacing-md;
+  right: $spacing-md;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  @include bg-color($color-white, 0.1);
+  @include border-color(1px, solid, $color-white, 0.3);
+  color: $color-white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: $text-size-xl;
+  z-index: 100;
+  transition: all 0.3s ease;
+  opacity: 0;
+  animation: fadeIn 1s ease-out 0.5s forwards;
+
+  &:hover {
+    @include bg-color($color-white, 0.2);
+    @include border-color(1px, solid, $color-white, 0.5);
+    transform: scale(1.1);
+  }
+
+  @media (min-width: $breakpoint-md) {
+    bottom: $spacing-lg;
+    right: $spacing-lg;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
   }
 }
