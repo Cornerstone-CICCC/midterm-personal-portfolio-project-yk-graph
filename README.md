@@ -1,6 +1,6 @@
 # Mid Term - Personal Portfolio Website
 
-**Live Deployment Link:** [Insert Link Here]
+**Live Deployment Link: <a href="https://yk-graph-portfolio.netlify.app/" target="_blank" rel="noopener noreferrer">here</a>**
 
 ## Goal
 
